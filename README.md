@@ -35,7 +35,7 @@ El audio, las notas y las actas se guardan cifrados en tu equipo. La única func
 
 ## Instalación rápida
 
-1. Descarga el ZIP desde **[Releases](../../releases/latest)**.
+1. Descarga el ZIP desde **[Releases](https://github.com/90l3m0np13/lemonotes/releases/latest)**.
 2. Descomprímelo en una carpeta del usuario, por ejemplo:
 
    ```text

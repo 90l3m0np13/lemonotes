@@ -4,7 +4,7 @@ LemoNotes se distribuye como **ZIP portable**. No hay instalador, servicio ni cu
 
 ## 1. Descargar
 
-Descarga el ZIP más reciente desde **[Releases](../../releases/latest)**:
+Descarga el ZIP más reciente desde **[Releases](https://github.com/90l3m0np13/lemonotes/releases/latest)**:
 
 ```text
 LemoNotes-1.0.0-win-x64.zip
