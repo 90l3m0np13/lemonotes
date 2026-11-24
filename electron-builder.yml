@@ -1,0 +1,55 @@
+appId: com.lemonotes.desktop
+productName: LemoNotes
+copyright: Copyright © 2026 LemoNotes
+disableAsarIntegrity: true
+directories:
+  output: dist
+  buildResources: build
+files:
+  - out/**/*
+  - package.json
+asar: true
+asarUnpack:
+  - resources/**
+extraResources:
+  - from: resources/whisper
+    to: whisper
+    filter:
+      - "**/*"
+  - from: resources/models
+    to: models
+    filter:
+      - "**/*"
+  - from: build/icon.png
+    to: icon.png
+  - from: build/tray.png
+    to: tray.png
+extraFiles:
+  - from: .env.example
+    to: .env.example
+  - from: README.md
+    to: README.md
+  - from: THIRD_PARTY_NOTICES.md
+    to: THIRD_PARTY_NOTICES.md
+  - from: LICENSE
+    to: LICENSE
+  - from: screenshots
+    to: screenshots
+win:
+  signAndEditExecutable: false
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: build/icon.ico
+  artifactName: LemoNotes-${version}-Setup.${ext}
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: LemoNotes
+  installerIcon: build/icon.ico
+  uninstallerIcon: build/icon.ico
+  license: LICENSE

@@ -1,0 +1,39 @@
+# Dependencias y artefactos
+node_modules/
+.pnpm-store/
+.toolchain/
+out/
+dist/
+dist-fix*/
+playwright-report/
+test-results/
+.playwright/
+
+# Datos de usuario y pruebas
+LemoNotesData/
+**/LemoNotesData*/
+**/TestData*/
+**/AudioTestData*/
+*.lemonote
+*.lemonaudio
+
+# Secretos
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+
+# Binarios y artefactos de compilación
+*.exe
+*.msi
+*.zip
+*.res.o
+*.tsbuildinfo
+resources/whisper/
+resources/models/
+
+# Sistema
+*.log
+Thumbs.db
+.DS_Store

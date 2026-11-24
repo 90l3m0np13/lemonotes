@@ -1,0 +1,8 @@
+nodeLinker: hoisted
+shamefullyHoist: true
+onlyBuiltDependencies:
+  - electron
+  - esbuild
+  - electron-winstaller
+minimumReleaseAgeExclude:
+  - lucide-react@1.77.0
