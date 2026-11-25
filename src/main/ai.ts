@@ -173,7 +173,7 @@ export class AiService {
   ): Promise<string> {
     this.ensureConfigured()
     const controller = new AbortController()
-    const timeout = setTimeout(() => controller.abort(), 120_000)
+    const timeout = setTimeout(() => controller.abort(), 600_000)
     const endpoints = [`${this.baseUrl}/chat/completions`]
     if (!this.baseUrl.endsWith('/v1')) endpoints.push(`${this.baseUrl}/v1/chat/completions`)
     let lastError: Error | null = null
@@ -371,10 +371,10 @@ function buildLocalProposal(detail: SessionDetail): AiProposal {
 export function describeAiError(error: unknown): string {
   const message = error instanceof Error ? error.message : String(error)
   if (message.includes('aborted') || message.includes('AbortError')) {
-    return 'DeepSeek tardó más de dos minutos. Prueba otra vez o usa el borrador local.'
+    return 'La IA tardó demasiado (más de 10 minutos). Prueba otra vez, usa un modelo más pequeño o el borrador local.'
   }
   if (message.includes('fetch failed') || message.includes('ENOTFOUND') || message.includes('ECONN')) {
-    return 'No hay conexión con DeepSeek. Tus notas siguen a salvo en local; inténtalo cuando vuelva la red.'
+    return 'No hay conexión con la IA. Tus notas siguen a salvo en local; inténtalo cuando el servidor esté disponible.'
   }
   return message
 }
