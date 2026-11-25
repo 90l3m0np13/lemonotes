@@ -648,7 +648,9 @@ export class Database {
         .run(this.vault.encryptJson(history), this.vault.encryptJson(current.acta), sessionId)
     }
     this.conn
-      .prepare('UPDATE sessions SET acta_enc = ?, origins_enc = ?, updated_at = ? WHERE id = ?')
+      .prepare(
+        'UPDATE sessions SET acta_enc = ?, origins_enc = ?, ai_proposal_enc = NULL, updated_at = ? WHERE id = ?'
+      )
       .run(this.vault.encryptJson(next), this.vault.encryptJson(origins), Date.now(), sessionId)
     this.queueSync(sessionId)
     const detail = this.getSession(sessionId)
